@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } 
         
         $sql = "INSERT INTO sensores (s1, s2)
-        VALUES ('" . $s1 . "', '" . $s1 . "')";
+        VALUES ('" . $s1 . "', '" . $s2 . "')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
