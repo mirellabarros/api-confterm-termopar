@@ -13,15 +13,13 @@ $password = "paulvandyk11";
 // If you change this value, the ESP32 sketch needs to match
 $api_key_value = "tPmAT5Ab3j7F9";
 
-$api_key = $nome = $valor = "";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $api_key = test_input($_POST["api_key"]);
     
     if ($api_key == $api_key_value) {
-        $nome = test_input($_POST["nome"]);
-        $valor = test_input($_POST["valor"]);
+        $s1 = test_input($_POST["s1"]);
+        $s2 = test_input($_POST["s2"]);
         
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -30,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $conn->connect_error);
         } 
         
-        $sql = "INSERT INTO mensagens (nome, valor)
-        VALUES ('" . $nome . "', '" . $valor . "')";
+        $sql = "INSERT INTO sensores (s1, s2)
+        VALUES ('" . $s1 . "', '" . $s1 . "')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
