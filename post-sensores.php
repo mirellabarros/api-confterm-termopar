@@ -1,7 +1,7 @@
 <?php
 
 // Endereço do servidor
-$servername = "192.168.50.58";
+$servername = "10.0.0.50";
 // Nome da base de dados
 $dbname = "termopar";
 // Usuário do banco de dados
