@@ -18,8 +18,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);
     
     if ($api_key == $api_key_value) {
-        $s1 = test_input($_POST["s1"]);
-        $s2 = test_input($_POST["s2"]);
+        $tk1 = test_input($_POST["tk1"]);
+        $tk2 = test_input($_POST["tk2"]);
+        $tk3 = test_input($_POST["tk3"]);
+        $tk4 = test_input($_POST["tk4"]);
+        $tk5 = test_input($_POST["tk5"]);
+        $media = test_input($_POST["media"]);
+        $t_tdb = test_input($_POST["t_tdb"]);
+        $h_tdb = test_input($_POST["h_tdb"]);
+        $kimo = test_input($_POST["kimo"]);
         
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -28,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $conn->connect_error);
         } 
         
-        $sql = "INSERT INTO sensores (s1, s2)
-        VALUES ('" . $s1 . "', '" . $s2 . "')";
+        $sql = "INSERT INTO sensores (tk1, tk2, tk3, tk4, tk5, media, t_tdb, h_tdb, kimo)
+        VALUES ('" . $tk1 . "', '" . $tk2 . "', '" . $tk3 . ", '" . $tk4 . ", '" . $tk5 . ", '" . $media . ", '" . $t_tdb . ", '" . $t_tdb . ", '" . $kimo . ")";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
