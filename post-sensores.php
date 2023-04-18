@@ -35,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $conn->connect_error);
         } 
         
-        $sql = "INSERT INTO sensores (tk1, tk2, tk3, tk4, tk5, media, t_tdb, h_tdb, kimo)
-        VALUES ('" . $tk1 . "', '" . $tk2 . "', '" . $tk3 . ", '" . $tk4 . ", '" . $tk5 . ", '" . $media . ", '" . $t_tdb . ", '" . $t_tdb . ", '" . $kimo . ")";
+        $sql = "INSERT INTO sensores (tk1, tk2, tk3, tk4, tk5, media, t_tdb, h_tdb, kimo) 
+        VALUES ('{$tk1}', '{$tk2}', '{$tk3}', '{$tk4}', '{$tk5}', '{$media}', '{$t_tdb}', '{$h_tdb}', '{$kimo}')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
